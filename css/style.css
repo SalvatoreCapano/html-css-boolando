@@ -16,56 +16,66 @@
 */
 
 /*REGOLE GENERALI*/
+body{
+    font-family: sans-serif;
+    font-weight: 600;
+}
 .container{
     max-width: 1380px;
     height: 100%;
-    background-color: rgb(151, 151, 80);
     margin: 0 auto;
 
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.container > * > ul{
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container > * > ul > li > a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+    display: inline-block;
+    padding: 0.3em 0.25em;
+}
+
+
+
 /*HEADER*/
-/*aggiungere ombra all'header*/
 
 body > header {
     width: 100%;
-    height: 70px;
-}
+    padding: 20px 0;
 
-header .container > *,
-footer .container > * {
-    position: absolute;
-    width: 140px;
-    height: 100%;
+    background-color: #ff6900;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+
+    position: fixed;
     top: 0;
+    z-index: 100;
 }
 
-body > header .container > *:first-child,
-body > footer .container > *:first-child{
-    left: 0;
-}
-
-body > header .container #logoContainer {
-    left: 50%;
-}
-
-body > header .container >*:last-child,
-body > footer .container >*:last-child {
-    right: 0;
+#logoContainer img{
+    max-height: 30px;
 }
 
 /*MAIN*/
 body > main{
     width: 100%;
 
-    margin-top: 50px;  /*da modificare*/
-    padding: 3.5rem;
+    margin-top: 80px;
+    padding: 3rem;
 }
 
 main .container{
-    display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -73,55 +83,106 @@ main .container{
     width: 32.5%;
 }
 
-.card > *{
-    width: 100%;
-    background-color: rgb(171, 124, 171);
-}
-
 .card:nth-child(n+4){
     margin-top: 50px;  /*aggiunge margine superiore alle cards dalla 4 in poi*/
 }
 
-.card .cardImageContainer{
-    height: 400px;
-    margin-bottom: 5px;
+.card > *{
+    width: 100%;
+}
 
+.card .cardImageContainer{
     position: relative;
+}
+
+.card .cardImageContainer img{
+    width: 100%;
+}
+
+.card .cardImageContainer img:first-child{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.card .cardImageContainer:hover img:first-child{
+    z-index: 1;
 }
 
 .card .heartContainer{
     position: absolute;
     right: 0;
     top: 10px;
+    z-index: 10;
 
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
 
-    background-color: aquamarine;
+    font-size: 2rem;
+    text-align: center;
+    
+    background-color: white;
 }
 
 .card .tagContainer{
     position: absolute;
     left: 0;
-    bottom: 40px;
+    bottom: 50px;
+    z-index: 10;
 
-    height: 30px;
+    height: 25px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: white;
+    line-height: 25px;
 
-    background-color: aquamarine;
 }
 
 .card .tag{
     display: inline-block;
     height: 100%;
+    padding: 0 0.4rem;
 }
 
 .redTag{
-    background-color: orangered;
+    background-color: red;
 }
 
 .greenTag{
-    background-color: greenyellow;
+    background-color: green;
 }
+
+.brandName{
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.productName{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.productInfoContainer > div {
+    font-size: 0.85rem;
+}
+
+.productInfoContainer .newPrice {
+    color: red;
+}
+
+.productInfoContainer .oldPrice {
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+.productInfoContainer .newPrice::after {
+    content: '\20AC';
+}
+
+.productInfoContainer .oldPrice::after {
+    content: '\20AC';
+}
+
 
 /*FOOTER*/
 body > footer{
@@ -130,10 +191,6 @@ body > footer{
     margin-top: 20px;
     
     padding: 20px;
-}
-
- footer ul li{
-    display: inline-block;
 }
 
 /*DEBUG*/
