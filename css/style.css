@@ -14,3 +14,68 @@
     footer background: #1a1a1a
     footer elements: #ffffff
 */
+
+/*REGOLE GENERALI*/
+.container{
+    max-width: 1380px;
+    height: 100%;
+    min-height: 50px;
+    background-color: rgb(151, 151, 80);
+    margin: 0 auto;
+
+    position: relative;
+}
+
+/*HEADER*/
+/*aggiungere ombra all'header*/
+
+body > header{
+    width: 100%;
+    height: 70px;
+}
+
+body > header .container > *{
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    top: 0;
+}
+
+body > header .container nav{
+    left: 0;
+}
+
+body > header .container #logoContainer{
+    left: 50%;
+}
+
+body > header .container #menu{
+    right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*DEBUG*/
+.debug > *{
+    background-color: red;
+}
+
+.debug > * > *{
+    background-color: green;
+}
+
+.debug > * > * > *{
+    background-color: blue;
+}
