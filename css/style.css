@@ -28,43 +28,113 @@
 /*HEADER*/
 /*aggiungere ombra all'header*/
 
-body > header{
+body > header {
     width: 100%;
     height: 70px;
 }
 
-body > header .container > *{
+header .container > *,
+footer .container > * {
     position: absolute;
-    width: 100px;
+    width: 140px;
     height: 100%;
     top: 0;
 }
 
-body > header .container nav{
+body > header .container > *:first-child,
+body > footer .container > *:first-child{
     left: 0;
 }
 
-body > header .container #logoContainer{
+body > header .container #logoContainer {
     left: 50%;
 }
 
-body > header .container #menu{
+body > header .container >*:last-child,
+body > footer .container >*:last-child {
     right: 0;
 }
 
+/*MAIN*/
+body > main{
+    width: 100%;
 
+    margin-top: 50px;  /*da modificare*/
+    padding: 3.5rem;
+}
 
+main .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
+.card{
+    width: 32.5%;
+}
 
+.card > *{
+    width: 100%;
+    background-color: rgb(171, 124, 171);
+}
 
+.card:nth-child(n+4){
+    margin-top: 50px;  /*aggiunge margine superiore alle cards dalla 4 in poi*/
+}
 
+.card .cardImageContainer{
+    height: 400px;
+    margin-bottom: 5px;
 
+    position: relative;
+}
 
+.card .heartContainer{
+    position: absolute;
+    right: 0;
+    top: 10px;
 
+    width: 30px;
+    height: 30px;
 
+    background-color: aquamarine;
+}
 
+.card .tagContainer{
+    position: absolute;
+    left: 0;
+    bottom: 40px;
 
+    height: 30px;
 
+    background-color: aquamarine;
+}
+
+.card .tag{
+    display: inline-block;
+    height: 100%;
+}
+
+.redTag{
+    background-color: orangered;
+}
+
+.greenTag{
+    background-color: greenyellow;
+}
+
+/*FOOTER*/
+body > footer{
+    width: 100%;
+    height: 100px; 
+    margin-top: 20px;
+    
+    padding: 20px;
+}
+
+ footer ul li{
+    display: inline-block;
+}
 
 /*DEBUG*/
 .debug > *{
@@ -77,84 +147,4 @@ body > header .container #menu{
 
 .debug > * > * > *{
     background-color: blue;
-}
-
-.debug main{
-    width: 100%;
-    /* height: 600px; */
-
-    margin-top: 50px;
-
-    padding: 3.5rem;
-}
-
-.debug main .container{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.debug .card{
-    width: 32.5%;
-    /* height: 600px; */
-}
-
-.debug .card > *{
-    width: 100%;
-
-    background-color: violet;
-    
-}
-
-.debug .card:nth-child(n+4){
-    margin-top: 50px;
-}
-
-.debug .card .cardImageContainer{
-    height: 400px;
-
-    margin-bottom: 5px;
-
-    position: relative;
-}
-
-.debug .card .productInfoContainer{
-    /* height: 50px; */
-}
-
-.debug .card .heartContainer{
-    position: absolute;
-    right: 0;
-    top: 10px;
-
-    width: 30px;
-    height: 30px;
-
-    background-color: aquamarine;
-}
-
-.debug .card .tagContainer{
-    position: absolute;
-    left: 0;
-    bottom: 40px;
-
-    /* width: 100px; */
-    height: 30px;
-
-    background-color: aquamarine;
-}
-
-.debug .card .tag{
-    display: inline-block;
-
-    height: 100%;
-
-}
-
-.redTag{
-    background-color: orangered;
-}
-
-.greenTag{
-    background-color: greenyellow;
 }
